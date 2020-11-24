@@ -18,19 +18,30 @@
         </header>
         <main>
             <div class="cd-wrapper">
-                <ul class="cd-list">
+                <!-- Select by genre -->
+                <div class="filter-wrapper">
+                    <p class="filter">Filter by genre:</p>
+                    <select name="" id="">
+                        <option value="">All</option>
+                    </select>
+                </div>
+                
+                <!-- List cd -->
+                <ul v-if="cds.length > 0" class="cd-list">
                     <li v-for="cd in cds"class="cd">
-                        <div class="image-cd">
-                           <img :src="cd.poster" alt=""> 
-                        </div>
-                        
-                        <h2 class="title">{{cd.title}}</h2>
-                        <h3 class="author">{{cd.author}}</h3>
-                        <h4 class="year">{{cd.year}}</h4>
-                        <h5 class="genre">{{cd.genre}}</h5>
+                        <div class="image-wrapper">
+                           <img :src="cd.poster" :alt="cd.title"> 
+                        </div>                        
+                        <h3 class="title">{{cd.title}}</h3>
+                        <div class="author">{{cd.author}}</div>
+                        <div class="year">{{cd.year}}</div>
+                        <div class="genre">{{cd.genre}}</div>
                     </li>
                 </ul>
             </div>
+            <h2 v-else class="loader">
+                Loading list, please wait...
+            </h2>
         </main>
 
     </div>
