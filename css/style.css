@@ -60,6 +60,11 @@ p.filter {
     display: inline-block;
 }
 
+.filter-wrapper select {
+    width: 60px;
+    margin-left: 10px;
+}
+
 /*  Main | Cd List */
 
 .cd-list {

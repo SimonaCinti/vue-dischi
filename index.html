@@ -21,8 +21,14 @@
                 <!-- Select by genre -->
                 <div class="filter-wrapper">
                     <p class="filter">Filter by genre:</p>
-                    <select name="" id="">
-                        <option value="">All</option>
+                    <select v-model="selectedGenre"
+                    @change="filterGenre">
+                        <option value="all">All</option>
+                        <option value="pop">Pop</option>
+                        <option value="rock">Rock</option>
+                        <option value="metal">Metal</option>
+                        <option value="jazz">Jazz</option>
+                        
                     </select>
                 </div>
                 
@@ -38,10 +44,11 @@
                         <div class="genre">{{cd.genre}}</div>
                     </li>
                 </ul>
-            </div>
-            <h2 v-else class="loader">
+                <h2 v-else class="loader">
                 Loading list, please wait...
-            </h2>
+                </h2>
+            </div>
+            
         </main>
 
     </div>
